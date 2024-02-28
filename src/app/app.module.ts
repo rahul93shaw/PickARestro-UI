@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { CommonModule } from '@angular/common';
 import { CustomMaterialModule } from './core/material.module';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,8 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule ,
     BrowserAnimationsModule,
-    CustomMaterialModule,
-    CommonModule, 
+    CustomMaterialModule, 
     HttpClientModule
   ],
   providers: [
