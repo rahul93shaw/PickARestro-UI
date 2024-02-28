@@ -1,1 +1,27 @@
-<p>Welcome to PickARestro <b>{{username}}</b></p>
+
+<div class="container">
+    <div class="col-12">
+        <p>Welcome to PickARestro <b>{{username}}</b></p>
+    </div>
+    <br>
+    <div class="col-12">
+        <div class="col-6">
+            <label>Session Type</label>
+        </div>
+        <div class="col-6">
+            <input type="text" placeholder="Enter Session Type" [(ngModel)]="this.sessionDto.sessionType" />
+        </div>
+    </div>
+    <br>
+    <div class="col-12">
+        <div class="col-6">
+            <label>Session Description (Optional)</label>
+        </div>
+        <div class="col-6">
+            <input type="text" placeholder="Enter Session Description" [(ngModel)]="this.sessionDto.sessionDesc"/>
+        </div>
+    </div>
+    <br>
+    <div class="col-12"><button tpye="submit" name="create session" (click)="createSession()">Create Session</button></div>
+</div>
+

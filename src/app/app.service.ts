@@ -15,4 +15,7 @@ export class AppService {
   userLogin(loginDto: any) {
     return this.http.post<any>(this.baseUrl + "/login/", loginDto);
   }
+  createSession(sessionDto: any) {
+    return this.http.post<any>(this.baseUrl + "/main/createSession", sessionDto);
+  }
 }

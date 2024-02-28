@@ -13,8 +13,5 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.isLoggedIn = AppService.isLoggedIn;
   }
-  ngAfterViewInit(): void {
-    this.isLoggedIn = AppService.isLoggedIn;
-  }
   title = 'PickARestro-UI';
 }
