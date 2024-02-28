@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,17 @@ import { Component, Input } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-@Input()
-username: any;
+  constructor(private route: ActivatedRoute) { }
+  username: any;
+
+  ngOnInit() {
+    this.route.queryParams
+      .subscribe(params => {
+        console.log(params); // { orderby: "price" }
+        this.username = params['username'];
+        console.log(this.username); // price
+      }
+    );
+  }
 
 }

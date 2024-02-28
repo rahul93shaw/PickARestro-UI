@@ -41,7 +41,7 @@ export class LoginComponent {
             AppService.loggedInUser = null;
           } else {
             if(!PickARestroUtil.isNullOrUndefined(data.body.username)) {
-              this.router.navigate(['./home', {username : data.body.username}]);
+              this.router.navigate(['./home'], {queryParams : {'username':data.body.username }});
             }
           }
         }

@@ -11,12 +11,14 @@
                   <input type="text" class="form-control" name="Name" [(ngModel)]="loginDto.name"  autofocus />
                 </div>
               </div>
+              <br>
             <div class="grid-row">
               <div class="col-12 form-group">
                 <label>Username</label>
                 <input type="text" class="form-control" name="username" [(ngModel)]="loginDto.username"  autofocus />
               </div>
             </div>
+            <br>
             <div class="grid-row">
               <div class="col-12 form-group">
                 <label>Password</label>
@@ -25,6 +27,7 @@
                 </div>
               </div>
             </div>
+            <br>
             <div class="grid-row">
               <div class="col-12 button-ctnr">
                 <button type="submit" class="button button-primary button-width-full" (click)="login()">Login</button>
