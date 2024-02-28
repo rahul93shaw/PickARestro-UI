@@ -12,6 +12,7 @@ import { PickARestroUtil } from '../models/PickARestroUtil';
 export class HomeComponent {
   username: any;
   sessionDto: any;
+  sessionList: any = [];
   constructor(private route: ActivatedRoute, private appService: AppService) {
     this.route.queryParams.subscribe(params => {
       this.username = params['username'];
@@ -33,6 +34,22 @@ export class HomeComponent {
     if(PickARestroUtil.isNullOrUndefined(this.username)) {
       this.sessionDto.host = this.route.snapshot.paramMap.get("username");
     }*/
+    this.appService.retrieveActiveSessions(this.username).subscribe(
+      (data) =>{
+        console.log("data: ", data);
+        let status = data.status;
+        console.log("status:: ", status);
+          if(status === "failure") {
+            alert(data.message);
+            //AppService.loggedInUser = null;
+          } else {
+            let res = data.body;
+            res.forEach((rr: any) => {
+              this.sessionList.push(rr);
+              console.log("active sessions: ", this.sessionList);
+            })
+          }
+    });
   }
 
   createSession(){

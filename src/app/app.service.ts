@@ -18,4 +18,7 @@ export class AppService {
   createSession(sessionDto: any) {
     return this.http.post<any>(this.baseUrl + "/main/createSession", sessionDto);
   }
+  retrieveActiveSessions(username: any) {
+    return this.http.get<any>(this.baseUrl + "/main/activeSessionByUser?username="+username);
+  }
 }

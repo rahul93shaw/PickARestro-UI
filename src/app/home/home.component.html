@@ -23,5 +23,19 @@
     </div>
     <br>
     <div class="col-12"><button tpye="submit" name="create session" (click)="createSession()">Create Session</button></div>
+    <br>
+    <br>
+    <div class="col-12">
+        <div class="col-6">
+            <p>List of Active Sessions</p>
+        </div>
+        <div class="col-6">
+            <ul class="code-editor-options-menu" *ngFor="let session of sessionList">
+                <li>
+                  <span>{{session.sessionType}}</span>
+                </li>
+              </ul>
+        </div>
+    </div>
 </div>
 
